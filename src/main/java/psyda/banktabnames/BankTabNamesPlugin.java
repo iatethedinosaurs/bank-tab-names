@@ -55,7 +55,12 @@ public class BankTabNamesPlugin extends Plugin
 	@Subscribe
 	public void onScriptPostFired(ScriptPostFired scriptPostFired)
 	{
-		if (scriptPostFired.getScriptId() == 504 || scriptPostFired.getScriptId() == 276 || scriptPostFired.getScriptId() == 3275) // 504 and 276 = Bank tabs being reloaded | 3275 = Bank Settings menu closing
+		if (scriptPostFired.getScriptId() == 504 // bank switch tabs
+				|| scriptPostFired.getScriptId() == 276 // bank main build
+				|| scriptPostFired.getScriptId() == 3275 // closing bank menu settings
+				|| scriptPostFired.getScriptId() == 281 // bank search toggle
+				|| scriptPostFired.getScriptId() == 283 // bank search refresh
+				|| scriptPostFired.getScriptId() == 3326) // closing worn items via button press (vs. click)
 		{
 			replaceBankTabNumbers();
 
